@@ -24,6 +24,10 @@ namespace BowlingGame
             {
                Frame frameactuel = new Frame(false, false);
 
+               // Lance une frame
+               frameactuel.lancer();
+
+
 
             }
 
