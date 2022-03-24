@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BowlingGame
 {
-    internal class Frame
+    public class Frame
     {
         private int nblancerFait;
         private int nbpoint;

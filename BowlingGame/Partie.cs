@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BowlingGame
 {
-    internal class Partie
+    public class Partie
     {
         private int score_global;
         private int nbframe;

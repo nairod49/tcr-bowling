@@ -1,6 +1,7 @@
 using System;
+using Microsoft.VisualStudio.TestPlatform.ObjectModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-
+using BowlingGame;
 namespace BowlingGame.Test
 {
     [TestClass]
@@ -9,13 +10,13 @@ namespace BowlingGame.Test
         [TestMethod]
         public void TestQuillesDown()
         {
+            Frame frame = new Frame(false, false);
             // Test si toutes les quilles sont tombées OK
 
-            int nbquilleInit = 10;
-            int nbquillesDown = 10;
+           frame.lancer();
 
             // Assert
-            Assert.AreEqual(nbquilleInit, nbquillesDown, 0.001, "Il reste des quilles à faire tomber");
+            Assert.AreNotEqual(0, frame.get_nbpoint(), 0.001, "Il reste des quilles à faire tomber");
         }
 
         [TestMethod]
