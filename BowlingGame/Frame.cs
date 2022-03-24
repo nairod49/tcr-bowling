@@ -24,7 +24,7 @@ namespace BowlingGame
             Random aleatoire = new Random();
             while (nblancerFait <= 2 || nbquille == 0)
             {
-                int nbQuillesJustDown = aleatoire.Next(0,10-nbquille);
+                int nbQuillesJustDown = aleatoire.Next(0,nbquille);
             }
         }
 
