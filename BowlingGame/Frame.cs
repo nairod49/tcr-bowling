@@ -9,6 +9,7 @@ namespace BowlingGame
     public class Frame
     {
         // Toto
+    {//balalalaaefubaeef 
         private int nblancerFait;
         private int nbpoint;
         private int nbquilleRestante;
