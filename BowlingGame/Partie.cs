@@ -11,23 +11,23 @@ namespace BowlingGame
     {
         private int score_global;
         private int nbframe;
+        private Frame frameactuel;
 
         public void partie()
         {
             this.score_global = 0;
             this.nbframe = 0;
+            Frame frameactuel = new Frame(false, false);
         }
 
         public void lancer_partie()
         {
             while (nbframe <= 10)
             {
-               Frame frameactuel = new Frame(false, false);
-
-               // Lance une frame
-               frameactuel.lancer();
-
-
+                // Lance une frame
+               this.frameactuel.lancer();
+                // Incrémente le nombre de frame réalisée
+                nbframe++;
 
             }
 
