@@ -19,6 +19,15 @@ namespace BowlingGame
             this.nbquille = 10;
         }
 
+        public void lancer()
+        {
+            Random aleatoire = new Random();
+            while (nblancerFait <= 2 || nbquille == 0)
+            {
+                int nbQuillesJustDown = aleatoire.Next(0,10-nbquille);
+            }
+        }
+
         public int get_nbpoint()
         {
             return this.nbpoint;
