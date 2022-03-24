@@ -22,14 +22,22 @@ namespace BowlingGame
 
         public void lancer_partie()
         {
+            bool strikeancien = false;
+            bool spareancien = false;
             while (nbframe <= 10)
-            {
+            {   this.frameactuel.set_strike(strikeancien);
+                this.frameactuel.set_spare(spareancien);
                 // Lance une frame
                this.frameactuel.lancer();
+               score_global = score_global + this.frameactuel.get_nbpoint();
+               strikeancien = this.frameactuel.get_strike();
+               spareancien = this.frameactuel.get_spare();
                 // Incrémente le nombre de frame réalisée
                 nbframe++;
 
             }
+
+            
 
         }
     }

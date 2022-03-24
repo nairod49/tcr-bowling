@@ -50,9 +50,32 @@ namespace BowlingGame
                     // Calcul le nombre de points
                     nbpoint += nbQuillesJustDown;
                 }
-               
             }
+
+            if (nblancerFait == 1 && nbquilleRestante == 0)
+            {
+                this.strike = true;
+
+            }
+            else
+            {
+                this.strike = false;
+            }
+
+            if (nblancerFait == 2 && nbquilleRestante == 0)
+            {
+                this.spare = true;
+
+            }
+            else
+            {
+                this.spare = false;
+            }
+
+
         }
+
+        
 
         // Getters
         public int get_nbpoint()
