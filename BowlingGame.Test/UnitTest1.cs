@@ -23,19 +23,13 @@ namespace BowlingGame.Test
         public void TestLancerFaitUnStrike()
         {
             // Test si toutes les quilles sont tombées KO
+            Frame frame = new Frame(false, true);
+           
+            frame.lancer();
 
-            Random aleatoire = new Random();
-
-            int nbquilleInit = 10;
-            int nbQuillesRestantes = 10;
-
-            // Génère un nombre aléatoire de quilles dégommées
-            int nbQuillesJustDown = aleatoire.Next(1, nbQuillesRestantes+1);
-
-            nbQuillesRestantes -= nbQuillesJustDown;
 
             // Assert
-            Assert.AreEqual(0, nbQuillesRestantes, 0.001, "Vous n'avez pas fait de strike !!!");
+            Assert.AreNotEqual(10-frame.get_nbquilleRestante(),frame.get_nbpoint(), 0.001, "Vous n'avez pas fait de strike !!!");
         }
 
         [TestMethod]

@@ -30,10 +30,10 @@ namespace BowlingGame
         public void lancer()
         {
             Random aleatoire = new Random();
-            while (nblancerFait <= 2 || nbquilleRestante > 0)
+            while (nblancerFait <= 2 && nbquilleRestante > 0)
             {
                 // Incrémente le nombre de lancés
-                nbLancés++;
+                nblancerFait++;
                 // RAndom le nombre de quilles à faire tomber
                 int nbQuillesJustDown = aleatoire.Next(0, nbquilleRestante + 1);
                 // Si spear, ajouter les points double au score
