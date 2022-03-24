@@ -13,14 +13,18 @@ namespace BowlingGame
         private int nbquilleRestante;
         private int nbLancés;
         private int nbPointSpare;
+        private bool spare;
+        private bool strike;
 
-        public void frame()
+        public void frame(bool spare,bool strike)
         {
+            this.spare = spare;
+            this.strike = strike;
             this.nblancerFait = 0;
             this.nbpoint = 0;
             this.nbquilleRestante = 10;
             this.nbLancés = 0;
-            this.nbPointSpare = 0;
+            
         }
 
         public void lancer()
@@ -32,11 +36,21 @@ namespace BowlingGame
                 nbLancés++;
                 // RAndom le nombre de quilles à faire tomber
                 int nbQuillesJustDown = aleatoire.Next(0, nbquilleRestante + 1);
-                // Mémorise le nombre de quilles tombées pour le cas ou l'on fait un spear
-                nbPointSpare = nbQuillesJustDown;
-                // Calcul le nombre de points
-                nbpoint += nbQuillesJustDown;
-                // Si spear, ajouter les points bonus "nbPointSpare"
+                // Si spear, ajouter les points double au score
+
+                if (spare == true && nbLancés == 1)
+                {
+                    nbpoint = 2*nbQuillesJustDown;
+                }// Si strike doublé le score des deux lancé
+                else if (strike == true)
+                {
+                    nbpoint = 2 * nbQuillesJustDown;
+                }
+                else{
+                    // Calcul le nombre de points
+                    nbpoint += nbQuillesJustDown;
+                }
+               
             }
         }
 
@@ -55,6 +69,15 @@ namespace BowlingGame
             return this.nblancerFait;
         }
 
+        public bool get_strike()
+        {
+            return this.strike;
+        }
+
+        public bool get_spare()
+        {
+            return this.spare;
+        }
         // Setters
         public void set_nblancer(int n)
         {
@@ -70,6 +93,8 @@ namespace BowlingGame
         {
             this.nbquilleRestante = n;
         }
+
+        
 
 
     }
