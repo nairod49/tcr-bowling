@@ -1,3 +1,4 @@
+using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace BowlingGame.Test
@@ -8,7 +9,7 @@ namespace BowlingGame.Test
         [TestMethod]
         public void TestQuillesDown()
         {
-            // Test si toutes les quilles sont tombées
+            // Test si toutes les quilles sont tombées OK
 
             int nbquilleInit = 10;
             int nbquillesDown = 10;
@@ -18,15 +19,22 @@ namespace BowlingGame.Test
         }
 
         [TestMethod]
-        public void TestQuillesDown2()
+        public void TestLancerFaitUnStrike()
         {
-            // Test si toutes les quilles sont tombées
+            // Test si toutes les quilles sont tombées KO
+
+            Random aleatoire = new Random();
 
             int nbquilleInit = 10;
-            int nbquillesDown = 9;
+            int nbQuillesRestantes = 10;
+
+            // Génère un nombre aléatoire de quilles dégommées
+            int nbQuillesJustDown = aleatoire.Next(1, nbQuillesRestantes);
+
+            nbQuillesRestantes -= nbQuillesJustDown;
 
             // Assert
-            Assert.AreEqual(nbquilleInit, nbquillesDown, 0.001, "Il reste des quilles à faire tomber");
+            Assert.AreEqual(0, nbQuillesRestantes, 0.001, "Vous n'avez pas fait de strike !!!");
         }
     }
 }

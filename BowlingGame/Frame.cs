@@ -8,15 +8,15 @@ namespace BowlingGame
 {
     internal class Frame
     {
-        private int nblancer;
+        private int nblancerFait;
         private int nbpoint;
         private int nbquille;
 
-        public void frame(int lancer, int point,int quille)
+        public void frame()
         {
-            this.nblancer = lancer;
-            this.nbpoint = point;
-            this.nbquille = quille;
+            this.nblancerFait = 0;
+            this.nbpoint = 0;
+            this.nbquille = 10;
         }
 
         public int get_nbpoint()
@@ -30,12 +30,12 @@ namespace BowlingGame
 
         public int get_nblancer()
         {
-            return this.nblancer;
+            return this.nblancerFait;
         }
 
         public void set_nblancer(int n)
         {
-            this.nblancer = n;
+            this.nblancerFait = n;
         }
 
         public void set_nbpoint(int n)
