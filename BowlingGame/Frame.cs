@@ -16,7 +16,7 @@ namespace BowlingGame
         private bool spare;
         private bool strike;
 
-        public void frame(bool spare,bool strike)
+        public  Frame(bool spare,bool strike)
         {
             this.spare = spare;
             this.strike = strike;
