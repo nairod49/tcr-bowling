@@ -95,7 +95,14 @@ namespace BowlingGame
             this.nbquilleRestante = n;
         }
 
-        
+        public void set_spare(bool t)
+        {
+            this.spare = t;
+        }
+        public void set_strike(bool t)
+        {
+            this.strike = t;
+        }
 
 
     }
