@@ -10,31 +10,44 @@ namespace BowlingGame
     {
         private int nblancerFait;
         private int nbpoint;
-        private int nbquille;
+        private int nbquilleRestante;
+        private int nbLancés;
+        private int nbPointSpare;
 
         public void frame()
         {
             this.nblancerFait = 0;
             this.nbpoint = 0;
-            this.nbquille = 10;
+            this.nbquilleRestante = 10;
+            this.nbLancés = 0;
+            this.nbPointSpare = 0;
         }
 
         public void lancer()
         {
             Random aleatoire = new Random();
-            while (nblancerFait <= 2 || nbquille == 0)
+            while (nblancerFait <= 2 || nbquilleRestante > 0)
             {
-                int nbQuillesJustDown = aleatoire.Next(0,nbquille);
+                // Incrémente le nombre de lancés
+                nbLancés++;
+                // RAndom le nombre de quilles à faire tomber
+                int nbQuillesJustDown = aleatoire.Next(0, nbquilleRestante + 1);
+                // Mémorise le nombre de quilles tombées pour le cas ou l'on fait un spear
+                nbPointSpare = nbQuillesJustDown;
+                // Calcul le nombre de points
+                nbpoint += nbQuillesJustDown;
+                // Si spear, ajouter les points bonus "nbPointSpare"
             }
         }
 
+        // Getters
         public int get_nbpoint()
         {
             return this.nbpoint;
         }
-        public int get_nbquille()
+        public int get_nbquilleRestante()
         {
-            return this.nbquille;
+            return this.nbquilleRestante;
         }
 
         public int get_nblancer()
@@ -42,6 +55,7 @@ namespace BowlingGame
             return this.nblancerFait;
         }
 
+        // Setters
         public void set_nblancer(int n)
         {
             this.nblancerFait = n;
@@ -52,9 +66,9 @@ namespace BowlingGame
             this.nbpoint = n;
         }
 
-        public void set_nbquille(int n)
+        public void set_nbquilleRestante(int n)
         {
-            this.nbquille = n;
+            this.nbquilleRestante = n;
         }
 
 
