@@ -61,5 +61,22 @@ namespace BowlingGame.Test
             // Assert
             Assert.AreEqual(0, nbQuillesRestantes, 0.001, "Vous n'avez pas fait de spare !!!");
         }
+
+        [TestMethod]
+        public void TestFinDePartie()
+        {
+            // Test si la partie est finie
+
+            Random aleatoire = new Random();
+
+            int nbLancésFaits = 10;
+            int nbLancésAFaire = 10;
+
+            // Génère un nombre aléatoire de quilles dégommées
+            nbLancésFaits = aleatoire.Next(0, nbLancésAFaire + 1);
+
+            // Assert
+            Assert.AreEqual(nbLancésAFaire, nbLancésFaits, 0.001, "Vous n'avez pas fini la partie !!!");
+        }
     }
 }
